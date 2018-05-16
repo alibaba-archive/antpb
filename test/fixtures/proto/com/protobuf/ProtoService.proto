@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package com.protobuf.test.service;
+option java_multiple_files = false;
+option java_outer_classname = "ProtoServiceModels";
+
+
+service ProtoService {
+    option allow_alias = true;
+    rpc echoObj (ProtoObj) returns (ProtoObj) {};
+    rpc echoList (ProtoList) returns (ProtoList) {};
+    rpc echoStr (ProtoStr) returns (ProtoStr) {};
+    rpc echoXxx (com.protobuf.test.sub_grpc.TestObj2) returns (com.protobuf.test.sub_grpc.TestObj2) {};
+}
+
+message ProtoStr {
+    string arg = 1;
+}
+message ProtoList {
+    repeated ProtoObj arg = 1;
+}
+message ProtoObj {
+    string name1 = 1;
+    string Field2 = 2;
+    com.protobuf.test.sub_grpc.TestObj2 testObj2 = 3;
+    bool bbb = 4;
+    TestEnum enum1 = 5;
+    bytes bs = 6;
+    double db = 7;
+    repeated TestEnum list1 = 8;
+    repeated int32 list2 = 9 [packed=true];
+    repeated com.protobuf.test.sub_grpc.TestObj2 list3 = 10;
+    repeated string list4 = 11;
+    repeated bytes list5 = 12;
+    map<int64, TestEnum> map1 = 13;
+    map<int32, int32> map2 = 14;
+    map<bool, com.protobuf.test.sub_grpc.TestObj2> map3 = 15;
+    map<string, string> map4 = 16;
+    map<string, bytes> map5 = 17;
+    repeated TestEnum enum2 = 18;
+    uint32 ui = 19;
+    int64 long = 20;
+    uint64 ulong = 21;
+    map<string, double> map6 = 22;
+    map<string, uint32> map7 = 23;
+    map<string, int64> map8 = 24;
+    map<string, bool> map9 = 25;
+    map<string, uint64> map10 = 26;
+    reserved 27;
+    reserved "foo", "bar";
+}
+message SampleMessage {
+  oneof test_oneof {
+    string name = 4;
+    SubMessage sub_message = 9;
+  }
+}
+
+enum TestEnum {
+    A = 0;
+    B = 1;
+    C = 2;
+}
+
+import "com/protobuf/test/sub/Models.proto";

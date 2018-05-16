@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Protocol Buffers for JavaScript. It from the dcodeIO protobufjs, we modify some files to achieve our need.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "scripts": {
     "autod": "autod",
     "lint": "eslint . --ext .js",
@@ -27,14 +31,17 @@
   },
   "homepage": "https://github.com/node-modules/antpb#readme",
   "dependencies": {
-
+    "glob": "^7.1.2",
+    "protobufjs": "~6.8.6"
   },
   "devDependencies": {
     "autod": "^3.0.1",
+    "contributors": "^0.5.1",
     "egg-bin": "^4.7.0",
     "egg-ci": "^1.8.0",
     "eslint": "^4.19.1",
-    "eslint-config-egg": "^7.0.0"
+    "eslint-config-egg": "^7.0.0",
+    "mm": "^2.2.0"
   },
   "engines": {
     "node": ">= 8.0.0"
