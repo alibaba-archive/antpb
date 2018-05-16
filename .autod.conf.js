@@ -8,12 +8,16 @@ module.exports = {
     'test/fixtures',
   ],
   devdep: [
+    'mm',
     'autod',
     'egg-bin',
     'egg-ci',
     'eslint',
     'eslint-config-egg',
+    'contributors',
   ],
-  keep: [],
+  keep: [
+    "protobufjs",
+  ],
   semver: [],
 };
