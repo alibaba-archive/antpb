@@ -1,0 +1,45 @@
+{
+  "name": "antpb",
+  "version": "1.0.0",
+  "description": "Protocol Buffers for JavaScript. It from the dcodeIO protobufjs, we modify some files to achieve our need.",
+  "main": "index.js",
+  "scripts": {
+    "autod": "autod",
+    "lint": "eslint . --ext .js",
+    "cov": "egg-bin cov",
+    "test": "npm run lint && npm run test-local",
+    "test-local": "egg-bin test",
+    "pkgfiles": "egg-bin pkgfiles --check",
+    "ci": "npm run autod --check && npm run pkgfiles && npm run lint && npm run cov",
+    "contributors": "contributors -f plain -o AUTHORS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/node-modules/antpb.git"
+  },
+  "keywords": [
+    "protobuf"
+  ],
+  "author": "gxcsoccer <gxcsoccer@126.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/node-modules/antpb/issues"
+  },
+  "homepage": "https://github.com/node-modules/antpb#readme",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "egg-bin": "^4.7.0",
+    "egg-ci": "^1.8.0",
+    "eslint": "^4.19.1",
+    "eslint-config-egg": "^7.0.0"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "ci": {
+    "version": "8, 10"
+  }
+}
